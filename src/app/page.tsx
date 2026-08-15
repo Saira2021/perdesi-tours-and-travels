@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 import { InquiryForm } from "@/components/InquiryForm";
 import { JsonLd } from "@/components/JsonLd";
+import { OfficeMap } from "@/components/OfficeMap";
 import founder from "@/assets/founder.png";
 import heroImage from "@/assets/hero-kalam.png";
 import { tours, includedServices } from "@/data/tours";
@@ -287,7 +289,7 @@ export default function HomePage() {
               Share a few details and Maryam will personally reply with a custom itinerary, dates and
               transparent pricing — usually within 24 hours.
             </p>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm mb-8">
               <p>
                 <span className="font-bold uppercase tracking-widest text-[10px] text-foreground/50 mr-3">
                   WhatsApp
@@ -300,13 +302,8 @@ export default function HomePage() {
                 </span>
                 travelwithperdesi@gmail.com
               </p>
-              <p>
-                <span className="font-bold uppercase tracking-widest text-[10px] text-foreground/50 mr-3">
-                  Office
-                </span>
-                Sheikhupura Stadium, Khalid Road, Gol Masjid, near Dar-ul-Shifa Hospital, Sheikhupura
-              </p>
             </div>
+            <OfficeMap compact />
           </div>
           <InquiryForm />
         </div>
@@ -330,62 +327,7 @@ export default function HomePage() {
       </section>
       </main>
 
-      <footer className="bg-ink text-cream py-16 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-          <div>
-            <div className="text-3xl font-display italic mb-5">Perdesi Tours</div>
-            <p className="max-w-xs text-cream/60 text-sm leading-relaxed">
-              A boutique, woman-led travel agency revealing the hidden valleys of Pakistan&apos;s
-              Northern Areas with safety, warmth and care.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-xs uppercase tracking-[0.22em] font-bold mb-5 text-accent">Destinations</h4>
-            <ul className="space-y-3 text-sm text-cream/80">
-              <li>
-                <Link href="/tours/swat-kalam-3-days" className="hover:text-accent">
-                  Kalam &amp; Swat Valley
-                </Link>
-              </li>
-              <li>
-                <Link href="/tours/hunza-skardu-8-days" className="hover:text-accent">
-                  Hunza &amp; Gilgit
-                </Link>
-              </li>
-              <li>
-                <Link href="/tours/skardu-wilderness" className="hover:text-accent">
-                  Skardu &amp; Shigar
-                </Link>
-              </li>
-              <li>
-                <Link href="/tours/naran-kaghan-3-days" className="hover:text-accent">
-                  Naran–Kaghan
-                </Link>
-              </li>
-              <li>
-                <Link href="/tours/fairy-meadows-5-days" className="hover:text-accent">
-                  Fairy Meadows
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-xs uppercase tracking-[0.22em] font-bold mb-5 text-accent">Connect</h4>
-            <ul className="space-y-3 text-sm text-cream/80">
-              <li>
-                <a href="https://wa.me/923364572568">WhatsApp: +92 336 4572568</a>
-              </li>
-              <li>
-                <a href="mailto:travelwithperdesi@gmail.com">travelwithperdesi@gmail.com</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-cream/10 flex flex-wrap justify-between gap-3 text-[10px] uppercase tracking-[0.22em] text-cream/40">
-          <span>© 2026 Perdesi Tours Pakistan</span>
-          <span>Designed for adventure, made with care</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

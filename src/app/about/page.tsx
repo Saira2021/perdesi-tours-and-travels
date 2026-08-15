@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 import { JsonLd } from "@/components/JsonLd";
+import { OfficeMap } from "@/components/OfficeMap";
 import founder from "@/assets/founder.png";
 import heroKalam from "@/assets/hero-kalam.png";
 import { absoluteUrl, breadcrumbJsonLd, pageMetadata, travelAgencyJsonLd } from "@/lib/seo";
@@ -225,12 +227,8 @@ export default function AboutPage() {
                 travelwithperdesi@gmail.com
               </a>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6 sm:col-span-2">
-              <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-foreground/50 mb-2">Office</div>
-              <p className="text-foreground/80">
-                Sheikhupura Stadium, Khalid Road, Gol Masjid, opposite Sanatzar, near Dar-ul-Shifa
-                Hospital, Sheikhupura, Punjab
-              </p>
+            <div className="sm:col-span-2">
+              <OfficeMap />
             </div>
           </div>
           <Link
@@ -243,10 +241,7 @@ export default function AboutPage() {
       </section>
       </main>
 
-      <footer className="bg-ink text-cream py-14 px-6 lg:px-8 text-center">
-        <div className="font-display italic text-3xl mb-3">Perdesi Tours</div>
-        <p className="text-cream/60 text-[11px] uppercase tracking-[0.22em]">© 2026 Perdesi Tours Pakistan</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

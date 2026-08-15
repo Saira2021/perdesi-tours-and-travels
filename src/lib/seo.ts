@@ -9,6 +9,7 @@ export const PHONE_DISPLAY = "+92 336 4572568";
 export const PHONE_E164 = "+923364572568";
 export const EMAIL = "travelwithperdesi@gmail.com";
 export const WHATSAPP_URL = "https://wa.me/923364572568";
+export const MAPS_URL = "https://share.google/d8slExiAI51WJCtTW";
 export const DEFAULT_DESCRIPTION =
   "Woman-led tours of Pakistan's Northern Areas — Kalam, Hunza, Skardu, Naran and Fairy Meadows. Safe family, honeymoon and solo-women trips by CEO Maryam Arif.";
 
@@ -152,7 +153,12 @@ export function travelAgencyJsonLd() {
       availableLanguage: ["English", "Urdu"],
       areaServed: "PK",
     },
-    hasMap: "https://maps.google.com/?q=Sheikhupura+Stadium+Khalid+Road",
+    sameAs: [
+      "https://www.facebook.com/p/Perdesi-Tours-61573871982489/",
+      "https://www.instagram.com/perdesi_tours",
+      "https://www.tiktok.com/@perdesi_tours",
+    ],
+    hasMap: MAPS_URL,
   };
 }
 

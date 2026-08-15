@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 import { JsonLd } from "@/components/JsonLd";
 import {
   breadcrumbJsonLd,
@@ -230,16 +231,7 @@ export default async function TourPage({ params }: PageProps) {
       </section>
       </main>
 
-      <footer className="bg-ink text-cream py-14 px-6 lg:px-8 text-center">
-        <div className="font-display italic text-3xl mb-4">Perdesi Tours</div>
-        <p className="text-cream/70 text-sm">+92 336 4572568 · travelwithperdesi@gmail.com</p>
-        <Link
-          href="/#tours"
-          className="inline-block mt-8 text-[11px] uppercase tracking-[0.22em] font-bold border-b-2 border-cream/40 pb-1 hover:border-accent hover:text-accent transition-colors"
-        >
-          View all packages
-        </Link>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
