@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { tours } from "@/data/tours";
-import { assetUrl, siteUrl } from "@/lib/site";
+import { assetUrl, siteUrl, TOURS_INDEX_PATH } from "@/lib/site";
 import heroImage from "@/assets/hero-kalam.png";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: siteUrl(TOURS_INDEX_PATH),
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     ...tours.map((t) => ({
       url: siteUrl(`/tours/${t.slug}`),

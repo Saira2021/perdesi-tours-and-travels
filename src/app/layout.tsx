@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { DEFAULT_DESCRIPTION, KEYWORDS, SITE_NAME, SITE_ORIGIN, defaultOgImage } from "@/lib/seo";
 import "./globals.css";
@@ -58,6 +59,9 @@ export const metadata: Metadata = {
     description: DEFAULT_DESCRIPTION,
     images: [defaultOgImage.url],
   },
+  verification: {
+    google: "4HmOq-wR9LlKdhXLH2K0qYoyxADYRD9AQx_fL6Kk3m8",
+  },
   other: {
     "geo.region": "PK-PB",
     "geo.placename": "Sheikhupura",
@@ -68,6 +72,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-PK" className={`${playfair.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <GoogleAnalytics />
         {children}
         <WhatsAppFloat />
       </body>

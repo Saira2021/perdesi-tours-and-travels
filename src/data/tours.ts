@@ -36,12 +36,6 @@ export const bookingSteps = [
   { step: "Step 4", title: "Send proof", text: "Share the payment screenshot and your seat is confirmed." },
 ];
 
-export const paymentOptions = [
-  { method: "Allied Bank", detail: "0084001011676270 0019", holder: "Maryam Arif" },
-  { method: "SadaPay", detail: "0336 4572568", holder: "Maryam Arif" },
-  { method: "Easypaisa & JazzCash", detail: "0336 4572568", holder: "Maryam Arif" },
-];
-
 export const termsAndConditions = [
   "Guests must bring their original CNIC and arrive at least 30 minutes before departure.",
   "Please follow the group leader's instructions and maintain respectful behaviour throughout the journey.",

@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { MAPS_URL } from "@/lib/seo";
+import { TOURS_INDEX_PATH } from "@/lib/site";
 import { MapPinIcon } from "@/components/OfficeMap";
 
 const destinations = [
+  { href: TOURS_INDEX_PATH, label: "All destinations" },
   { href: "/tours/swat-kalam-3-days", label: "Kalam & Swat Valley" },
   { href: "/tours/hunza-skardu-8-days", label: "Hunza & Gilgit" },
   { href: "/tours/skardu-wilderness", label: "Skardu & Shigar" },
@@ -107,7 +109,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-cream/10 flex flex-wrap justify-between gap-3 text-[10px] uppercase tracking-[0.22em] text-cream/40">
-        <span>© 2026 Perdesi Tours Pakistan</span>
+        <span>© 2025 Perdesi Tours Pakistan</span>
         <span>Designed for adventure, made with care</span>
       </div>
     </footer>

@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { TOURS_INDEX_PATH } from "@/lib/site";
 
 const links = [
-  { label: "Destinations", href: "/#tours" },
+  { label: "Destinations", href: TOURS_INDEX_PATH },
   { label: "Tailored Trips", href: "/#categories" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/#contact" },

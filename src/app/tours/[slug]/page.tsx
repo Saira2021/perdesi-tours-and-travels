@@ -11,13 +11,13 @@ import {
   tourJsonLd,
   travelAgencyJsonLd,
 } from "@/lib/seo";
+import { TOURS_INDEX_PATH } from "@/lib/site";
 import {
   getTour,
   tours,
   includedServices,
   excludedServices,
   bookingSteps,
-  paymentOptions,
   termsAndConditions,
 } from "@/data/tours";
 
@@ -62,12 +62,12 @@ export default async function TourPage({ params }: PageProps) {
           tourJsonLd(tour, slug),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
-            { name: "Tours", path: "/#tours" },
+            { name: "Destinations", path: TOURS_INDEX_PATH },
             { name: tour.name, path: `/tours/${slug}` },
           ]),
         ]}
       />
-      <SiteNav />
+      <SiteNav active="Destinations" />
       <main>
 
       <header className="max-w-7xl mx-auto px-6 lg:px-8 pt-10 pb-16">
@@ -76,8 +76,8 @@ export default async function TourPage({ params }: PageProps) {
             Home
           </Link>
           <span className="mx-2">/</span>
-          <Link href="/#tours" className="hover:text-accent">
-            Tours
+          <Link href={TOURS_INDEX_PATH} className="hover:text-accent">
+            Destinations
           </Link>
           <span className="mx-2">/</span>
           <span className="text-foreground/80">{tour.name}</span>
@@ -182,37 +182,21 @@ export default async function TourPage({ params }: PageProps) {
       )}
 
       <section className="bg-secondary/40 border-y border-border/60 py-24 px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-4xl font-display mb-10">Simple &amp; Fast Booking</h2>
-            <ol className="space-y-6">
-              {bookingSteps.map((b) => (
-                <li key={b.step} className="flex gap-5">
-                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent pt-1.5 w-14 flex-shrink-0">
-                    {b.step}
-                  </span>
-                  <div>
-                    <h3 className="font-display text-xl mb-1">{b.title}</h3>
-                    <p className="text-sm text-foreground/70">{b.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div>
-            <h2 className="text-4xl font-display mb-10">Easy Payment Options</h2>
-            <div className="space-y-4">
-              {paymentOptions.map((p) => (
-                <div key={p.method} className="bg-card border border-border rounded-xl p-6">
-                  <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-foreground/50 mb-2">
-                    {p.method}
-                  </div>
-                  <div className="font-display text-xl">{p.detail}</div>
-                  <div className="text-sm text-foreground/60 mt-1">{p.holder}</div>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl font-display mb-10">Simple &amp; Fast Booking</h2>
+          <ol className="space-y-6">
+            {bookingSteps.map((b) => (
+              <li key={b.step} className="flex gap-5">
+                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent pt-1.5 w-14 flex-shrink-0">
+                  {b.step}
+                </span>
+                <div>
+                  <h3 className="font-display text-xl mb-1">{b.title}</h3>
+                  <p className="text-sm text-foreground/70">{b.text}</p>
                 </div>
-              ))}
-            </div>
-          </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

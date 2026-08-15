@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         destination: "https://perdesitours.com/:path*",
         permanent: true,
       },
+      {
+        source: "/tours",
+        destination: "/book-northern-pakistan-tours",
+        permanent: true,
+      },
     ];
   },
 };
