@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { JsonLd } from "@/components/JsonLd";
 import { OfficeMap } from "@/components/OfficeMap";
 import { GoogleReviews } from "@/components/GoogleReviews";
+import { DeluxePackages } from "@/components/DeluxePackages";
 import founder from "@/assets/founder.png";
 import heroImage from "@/assets/hero-kalam.png";
 import { tours } from "@/data/tours";
@@ -165,6 +166,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <DeluxePackages />
 
         <section id="about" className="py-28 px-6 lg:px-8">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">

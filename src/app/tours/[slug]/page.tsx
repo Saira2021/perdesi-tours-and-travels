@@ -177,6 +177,12 @@ export default async function TourPage({ params }: PageProps) {
                 </li>
               ))}
             </ol>
+            {tour.note ? (
+              <p className="mt-12 rounded-2xl border border-border/60 bg-secondary/40 px-6 py-5 text-sm text-foreground/70 leading-relaxed">
+                <span className="font-bold uppercase tracking-[0.16em] text-foreground/50">Note: </span>
+                {tour.note}
+              </p>
+            ) : null}
           </div>
         </section>
       )}

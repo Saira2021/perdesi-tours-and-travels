@@ -60,12 +60,120 @@ export type Tour = {
   summary: string;
   itinerary?: ItineraryDay[];
   highlights?: string[];
+  note?: string;
 };
 
 export const tours: Tour[] = [
   {
+    slug: "hunza-valley-5-days",
+    img: tourNaran,
+    name: "Hunza Valley — 5 Days",
+    region: "Gilgit-Baltistan • Hunza",
+    days: "5 Days",
+    audience: "Family • Women-only • Group",
+    summary:
+      "A five-day Hunza Valley expedition from Islamabad through Babusar Top, Naltar, Attabad Lake, ancient forts and Khunjerab Pass — returning via Naran and Lake Saif-ul-Malook.",
+    highlights: [
+      "Luxury transport from Islamabad via Hazara Expressway",
+      "Naran, Babusar Top and Chilas gateway route",
+      "Naltar Valley — Zero Point, Satrangi Lake and Blue Lake",
+      "Attabad Lake, Altit Fort, Baltit Fort and Khunjerab Pass",
+      "Nanga Parbat Viewpoint and Mountain Ranges Junction",
+      "Lake Saif-ul-Malook jeep ride on the return",
+    ],
+    itinerary: [
+      {
+        day: "Day 0",
+        title: "Departure & Pickup",
+        text: "Depart from Islamabad at 10:00 PM via luxury transport, beginning an exciting journey toward the mountains.",
+      },
+      {
+        day: "Day 1",
+        title: "Gateway to the Mountains",
+        text: "Stop at Bhera Interchange for breakfast, then continue to Chilas via Hazara Expressway, passing through Naran and Babusar Top. Enjoy scenic views before settling in Chilas for dinner and an overnight stay.",
+      },
+      {
+        day: "Day 2",
+        title: "Exploring Hunza's Heart",
+        text: "Transfer to jeeps for an off-road adventure to Naltar Valley, exploring Zero Point and Satrangi Lake. Relax by Blue Lake before returning to Hunza for dinner and an overnight stay.",
+      },
+      {
+        day: "Day 3",
+        title: "Adventure Through Ancient Forts & Lakes",
+        text: "Visit Attabad Lake and Tunnels, explore Altit and Baltit Forts, and travel to Khunjerab Pass at the China border. End the day with a BBQ, bonfire, and a night stay in Hunza.",
+      },
+      {
+        day: "Day 4",
+        title: "Cultural Immersion",
+        text: "Tour Altit Fort, then begin the return journey, stopping at Nanga Parbat Viewpoint and Mountain Ranges Junction before reaching Chilas for dinner and a night stay.",
+      },
+      {
+        day: "Day 5",
+        title: "Naran to Lahore via Islamabad",
+        text: "Start the day with breakfast, followed by a jeep ride to Lake Saif-ul-Malook. Depart for Islamabad, where Islamabad guests are dropped off before continuing to Lahore. The journey concludes with beautiful memories and new friendships.",
+      },
+    ],
+    note:
+      "In case the Naran route is closed or blocked, we will take the Besham route as an alternative. Please note that this route may take additional travel time, but we will ensure a smooth and comfortable journey to our destination. Your safety and convenience remain our top priority.",
+  },
+  {
+    slug: "skardu-valley-6-days",
+    img: tourSkardu,
+    name: "Skardu Valley — 6 Days",
+    region: "Gilgit-Baltistan • Skardu",
+    days: "6 Days",
+    audience: "Family • Women-only • Group",
+    summary:
+      "Six days from Lahore and Islamabad to Skardu — Upper Kachura Lake, Shangrila, Manthokha Waterfall, Shigar Fort, cold desert and the Karakoram Highway homeward.",
+    highlights: [
+      "Overnight departure from Lahore with Bhera refreshment stop",
+      "Karakoram Highway drive via Besham to Chilas",
+      "Nanga Parbat Viewpoint, Upper Kachura Lake and Shangrila Resort",
+      "Manthokha Waterfall, Sarfaranga Cold Desert and Shigar Fort",
+      "Astak Nala, River Indus and Roundu Haramosh sightseeing",
+      "Return via Islamabad with Lahore drop-off",
+    ],
+    itinerary: [
+      {
+        day: "Day 0",
+        title: "Departure & Pickup",
+        text: "Depart from Lahore at 9:00 PM, with a refreshment stop at Bhera Rest Area, before continuing the overnight journey to Islamabad.",
+      },
+      {
+        day: "Day 1",
+        title: "Onward to Chilas",
+        text: "Pick up participants from Rawalpindi at 2:30 AM, then travel to Chilas via Hazara Motorway and Karakoram Highway. Stop for breakfast in Besham and enjoy scenic views before arriving in Chilas for an overnight stay.",
+      },
+      {
+        day: "Day 2",
+        title: "Exploring Skardu Valley",
+        text: "After breakfast in Chilas, visit the Nanga Parbat Viewpoint and travel through Skardu Road. Explore Upper Kachura Lake and Shangrila Resort before settling in Skardu for the night.",
+      },
+      {
+        day: "Day 3",
+        title: "The Beauty of Kharmang & Shigar",
+        text: "Visit Manthokha Waterfall in Kharmang Valley, then explore Sarfaranga Cold Desert and Shigar Fort. Return to Skardu in the evening for an overnight stay.",
+      },
+      {
+        day: "Day 4",
+        title: "Adventure in Deosai",
+        text: "Spend the morning visiting remaining spots in Skardu, then travel back to Chilas with sightseeing stops at Astak Nala, River Indus, and Roundu Haramosh. Enjoy a group dinner and overnight stay in Chilas.",
+      },
+      {
+        day: "Day 5",
+        title: "Final Explorations & Return to Chilas",
+        text: "Spend the morning visiting remaining spots in Skardu, then travel back to Chilas with sightseeing stops at Astak Nala, River Indus, and Roundu Haramosh. Enjoy a group dinner and overnight stay in Chilas.",
+      },
+      {
+        day: "Day 6",
+        title: "Journey Back to Lahore",
+        text: "Begin the return journey early, with breakfast en route. Arrive in Islamabad by 6:00 PM and reach Lahore by midnight, concluding the tour with beautiful memories and new friendships.",
+      },
+    ],
+  },
+  {
     slug: "hunza-skardu-8-days",
-    img: tourHunza,
+    img: tourFairy,
     name: "Hunza & Skardu — 8 Days",
     region: "Gilgit-Baltistan • Hunza & Skardu",
     days: "8 Days / 7 Nights",
@@ -84,42 +192,42 @@ export const tours: Tour[] = [
       {
         day: "Day 1",
         title: "Lahore – Islamabad – Chilas",
-        text: "Depart from Lahore to Islamabad, meet & greet, then continue towards Chilas via the Karakoram Highway. Breakfast at Besham with scenic views along the way. Dinner and overnight stay in Chilas.",
+        text: "Depart from Lahore to Islamabad, meet & greet, then continue towards Chilas via the Karakoram Highway. Enjoy breakfast at Besham and scenic views along the way. Dinner and overnight stay in Chilas. (1st Night Stay)",
       },
       {
         day: "Day 2",
         title: "Chilas – Skardu",
-        text: "After breakfast, journey to Skardu, stopping at Nanga Parbat Viewpoint, 3 Mountain Junction and Astak Nalla. Explore Shangrila Resort and Upper Kachura Lake with an optional boat ride. Overnight in Skardu.",
+        text: "After breakfast, journey to Skardu, stopping at Nanga Parbat Viewpoint, 3 Mountain Junction, and Astak Nalla. Explore Shangrila Resort & Upper Kachura Lake, with an optional boat ride. Overnight stay in Skardu. (2nd Night Stay)",
       },
       {
         day: "Day 3",
         title: "Skardu – Shigar Valley",
-        text: "Visit Manthokha Waterfall, then explore Shigar Valley including Bab-e-Shigar, the Cold Desert and Shigar Fort. BBQ dinner and bonfire at the hotel.",
+        text: "Visit the Manthokha Waterfall, then explore Shigar Valley, including Bab-e-Shigar, Cold Desert, and Shigar Fort. Enjoy a BBQ dinner & bonfire at the hotel. (3rd Night Stay)",
       },
       {
         day: "Day 4",
         title: "Skardu – Deosai National Park",
-        text: "Jeep safari to Deosai National Park, stopping at Sadpara Lake, Bara Pani, Kalla Pani and Sheosar Lake. Return to Skardu for dinner and rest.",
+        text: "Embark on a jeep safari to Deosai National Park, stopping at Sadpara Lake, Bara Pani, Kalla Pani, and Sheosar Lake. Return to Skardu for dinner and rest. (4th Night Stay)",
       },
       {
         day: "Day 5",
         title: "Skardu – Hunza",
-        text: "Travel to Hunza Valley, visiting Altit Fort, Baltit Fort and the Royal Garden. Stroll through Karimabad Bazaar before an overnight stay in Hunza.",
+        text: "Travel to Hunza Valley, visiting Altit Fort, Baltit Fort, and Royal Garden. Stroll through Karimabad Bazaar before an overnight stay in Hunza. (5th Night Stay)",
       },
       {
         day: "Day 6",
         title: "Hunza – Khunjerab Pass",
-        text: "Visit the Pak–China border at Khunjerab Pass, with stops at Attabad Lake, Hussaini Suspension Bridge, Passu Cones and Sost Border. Return to Hunza for the night.",
+        text: "Visit the Pak-China border at Khunjerab Pass, with stops at Attabad Lake, Hussaini Suspension Bridge, Passu Cones, and Sost Border. Return to Hunza for the night. (6th Night Stay)",
       },
       {
         day: "Day 7",
         title: "Hunza – Chilas / Besham",
-        text: "Depart for Chilas or Besham, making scenic and refreshment stops along the way. Dinner and overnight stay.",
+        text: "Depart for Chilas/Besham, making scenic and refreshment stops along the way. Dinner and overnight stay. (7th Night Stay)",
       },
       {
         day: "Day 8",
         title: "Chilas / Besham – Islamabad – Lahore",
-        text: "Journey back to Islamabad with drop-offs for Islamabad travellers. Those continuing to Lahore complete the adventure with a farewell.",
+        text: "Journey back to Islamabad, with drop-offs for Islamabad travelers. Those continuing to Lahore complete the adventure with a farewell.",
       },
     ],
   },

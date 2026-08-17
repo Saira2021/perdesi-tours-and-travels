@@ -7,6 +7,7 @@ import { TOURS_INDEX_PATH } from "@/lib/site";
 
 const links = [
   { label: "Destinations", href: TOURS_INDEX_PATH },
+  { label: "Deluxe", href: "/#deluxe" },
   { label: "Tailored Trips", href: "/#categories" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/#contact" },
