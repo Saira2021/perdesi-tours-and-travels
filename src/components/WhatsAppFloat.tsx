@@ -1,9 +1,10 @@
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { WHATSAPP_URL } from "@/lib/seo";
 
 export function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/923364572568"
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Message Perdesi Tours on WhatsApp"

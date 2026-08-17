@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MAPS_URL } from "@/lib/seo";
+import { MAPS_URL, WHATSAPP_URL } from "@/lib/seo";
 import { TOURS_INDEX_PATH } from "@/lib/site";
 import { MapPinIcon } from "@/components/OfficeMap";
 
@@ -80,7 +80,7 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.22em] font-bold mb-5 text-accent">Connect</h4>
           <ul className="space-y-3 text-sm text-cream/80">
             <li>
-              <a href="https://wa.me/923364572568" className="hover:text-accent transition-colors">
+              <a href={WHATSAPP_URL} className="hover:text-accent transition-colors">
                 WhatsApp: +92 336 4572568
               </a>
             </li>

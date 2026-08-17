@@ -10,6 +10,7 @@ import {
   pageMetadata,
   tourJsonLd,
   travelAgencyJsonLd,
+  whatsappUrl,
 } from "@/lib/seo";
 import { TOURS_INDEX_PATH } from "@/lib/site";
 import {
@@ -104,7 +105,7 @@ export default async function TourPage({ params }: PageProps) {
               </div>
             </div>
             <a
-              href="https://wa.me/923364572568"
+              href={whatsappUrl(tour.name)}
               className="inline-block bg-sage text-cream px-8 py-4 rounded-full text-xs font-bold uppercase tracking-[0.22em] hover:bg-ink transition-colors"
             >
               Reserve Your Seat

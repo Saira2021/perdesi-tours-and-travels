@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { TOURS_INDEX_PATH } from "@/lib/site";
+import { WHATSAPP_URL } from "@/lib/seo";
 
 const links = [
   { label: "Destinations", href: TOURS_INDEX_PATH },
@@ -37,7 +38,7 @@ export function SiteNav({ active }: { active?: string }) {
 
         <div className="flex items-center gap-3 shrink-0">
           <a
-            href="https://wa.me/923364572568"
+            href={WHATSAPP_URL}
             className="hidden sm:inline-block bg-sage text-cream px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-ink transition-all"
           >
             Book an Escape
@@ -68,7 +69,7 @@ export function SiteNav({ active }: { active?: string }) {
               </Link>
             ))}
             <a
-              href="https://wa.me/923364572568"
+              href={WHATSAPP_URL}
               className="sm:hidden mt-1 bg-sage text-cream px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-widest text-center"
             >
               Book an Escape

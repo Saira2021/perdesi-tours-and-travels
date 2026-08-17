@@ -7,8 +7,18 @@ import type { Tour } from "@/data/tours";
 export const SITE_NAME = "Perdesi Tours";
 export const PHONE_DISPLAY = "+92 336 4572568";
 export const PHONE_E164 = "+923364572568";
+export const WHATSAPP_NUMBER = "923364572568";
 export const EMAIL = "travelwithperdesi@gmail.com";
-export const WHATSAPP_URL = "https://wa.me/923364572568";
+
+export function whatsappUrl(context?: string) {
+  const detail = context
+    ? ` I'm interested in ${context}.`
+    : " I'm interested in booking a tour.";
+  const message = `Hi Maryam, I visited perdesitours.com and${detail} Please share details.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+export const WHATSAPP_URL = whatsappUrl();
 export const MAPS_URL = "https://share.google/d8slExiAI51WJCtTW";
 export const DEFAULT_DESCRIPTION =
   "Woman-led tours of Pakistan's Northern Areas — Kalam, Hunza, Skardu, Naran and Fairy Meadows. Safe family, honeymoon and solo-women trips by CEO Maryam Arif.";

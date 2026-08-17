@@ -1,3 +1,5 @@
+import { whatsappUrl } from "@/lib/seo";
+
 export const deluxeDestinations = [
   {
     id: "naran",
@@ -26,11 +28,5 @@ export const deluxeCouplesPrice = "PKR 185,000";
 export const deluxeGroupPrice = "PKR 205,000";
 
 export function deluxeWhatsAppUrl(destination?: string) {
-  const trip = destination ?? "a Private Deluxe 3-day tour (Naran / Kalam / Kashmir)";
-  return (
-    "https://wa.me/923364572568?text=" +
-    encodeURIComponent(
-      `Hi Maryam, I visited perdesitours.com and I'm interested in ${trip}. Please share the private deluxe tour details.`,
-    )
-  );
+  return whatsappUrl(destination ?? "a Private Deluxe 3-day tour (Naran / Kalam / Kashmir)");
 }

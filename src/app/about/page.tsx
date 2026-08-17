@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { OfficeMap } from "@/components/OfficeMap";
 import founder from "@/assets/founder.png";
 import heroKalam from "@/assets/hero-kalam.png";
-import { absoluteUrl, breadcrumbJsonLd, pageMetadata, travelAgencyJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, pageMetadata, travelAgencyJsonLd, WHATSAPP_URL } from "@/lib/seo";
 
 const title = "About Perdesi Tours — Founded by Maryam Arif";
 const description =
@@ -214,7 +214,7 @@ export default function AboutPage() {
               <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-foreground/50 mb-2">
                 Phone / WhatsApp
               </div>
-              <a href="https://wa.me/923364572568" className="font-display text-xl hover:text-accent">
+              <a href={WHATSAPP_URL} className="font-display text-xl hover:text-accent">
                 +92 336 4572568
               </a>
             </div>
