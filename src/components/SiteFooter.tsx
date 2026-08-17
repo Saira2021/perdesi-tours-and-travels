@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { MAPS_URL, WHATSAPP_URL } from "@/lib/seo";
+import { MAPS_URL, SITE_NAME, WHATSAPP_URL } from "@/lib/seo";
 import { TOURS_INDEX_PATH } from "@/lib/site";
 import { MapPinIcon } from "@/components/OfficeMap";
+import { SiteLogo } from "@/components/SiteLogo";
 
 const destinations = [
   { href: TOURS_INDEX_PATH, label: "All destinations" },
@@ -35,7 +36,7 @@ export function SiteFooter() {
     <footer className="bg-ink text-cream py-16 px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
         <div>
-          <div className="text-3xl font-display italic mb-5">Perdesi Tours</div>
+          <SiteLogo variant="footer" />
           <p className="max-w-xs text-cream/60 text-sm leading-relaxed">
             A boutique, woman-led travel agency revealing the hidden valleys of Pakistan&apos;s
             Northern Areas with safety, warmth and care.
@@ -47,7 +48,7 @@ export function SiteFooter() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Follow Perdesi Tours on ${name}`}
+                aria-label={`Follow ${SITE_NAME} on ${name}`}
                 className="grid size-10 place-items-center rounded-full border border-cream/20 text-cream/80 transition-all duration-300 hover:border-accent hover:bg-accent hover:text-ink hover:-translate-y-0.5"
               >
                 <Icon className="size-[18px]" />
@@ -57,7 +58,7 @@ export function SiteFooter() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Open Perdesi Tours office on Google Maps"
+              aria-label={`Open ${SITE_NAME} office on Google Maps`}
               className="grid size-10 place-items-center rounded-full border border-cream/20 text-cream/80 transition-all duration-300 hover:border-accent hover:bg-accent hover:text-ink hover:-translate-y-0.5"
             >
               <MapPinIcon className="size-[18px]" />
@@ -109,7 +110,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-cream/10 flex flex-wrap justify-between gap-3 text-[10px] uppercase tracking-[0.22em] text-cream/40">
-        <span>© 2025 Perdesi Tours Pakistan</span>
+        <span>© 2025 {SITE_NAME}</span>
         <span>Designed for adventure, made with care</span>
       </div>
     </footer>

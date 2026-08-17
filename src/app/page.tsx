@@ -14,6 +14,7 @@ import { TourCard } from "@/components/TourCard";
 import { TOURS_INDEX_PATH } from "@/lib/site";
 import {
   EMAIL,
+  SITE_NAME,
   WHATSAPP_URL,
   absoluteUrl,
   HOME_FAQS,
@@ -25,7 +26,7 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Perdesi Tours | Pakistan Northern Areas Tours — Kalam, Hunza & Skardu",
+  title: `${SITE_NAME} | Pakistan Northern Areas Tours — Kalam, Hunza & Skardu`,
   description:
     "Book curated tours of Pakistan's Northern Areas — Kalam, Hunza, Skardu, Naran and Fairy Meadows. Woman-led agency by CEO Maryam Arif. Family, honeymoon and solo women trips.",
   path: "/",
@@ -53,7 +54,7 @@ export default function HomePage() {
           breadcrumbJsonLd([{ name: "Home", path: "/" }]),
           {
             "@type": "ItemList",
-            name: "Perdesi Tours packages",
+            name: `${SITE_NAME} packages`,
             itemListElement: tours.slice(0, 3).map((t, i) => ({
               "@type": "ListItem",
               position: i + 1,
@@ -97,7 +98,7 @@ export default function HomePage() {
             <div className="relative">
               <Image
                 src={heroImage}
-                alt="Perdesi Tours collage of Pakistan's northern areas — snow peaks, Kaghan river, cable car, Ayubia National Park and Faisal Mosque"
+                alt="Perdesi Tours collage of Pakistan's northern areas, snow peaks, Kaghan river, cable car, Ayubia National Park and Faisal Mosque"
                 className="w-full aspect-[4/5] object-cover rounded-2xl shadow-xl"
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 priority

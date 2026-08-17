@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-kalam.png";
 import { SITE_URL, assetUrl, siteUrl } from "@/lib/site";
 import type { Tour } from "@/data/tours";
 
-export const SITE_NAME = "Perdesi Tours";
+export const SITE_NAME = "Perdesi Tours & Travels";
 export const PHONE_DISPLAY = "+92 336 4572568";
 export const PHONE_E164 = "+923364572568";
 export const WHATSAPP_NUMBER = "923364572568";
@@ -31,7 +31,11 @@ export const ADDRESS = {
 } as const;
 
 export const KEYWORDS = [
+  "Perdesi Tours & Travels",
   "Perdesi Tours",
+  "Perdesi Tours Pakistan",
+  "Pardesi Tours in Pakistan",
+  "Arif Pardesi",
   "Pakistan northern areas tours",
   "Kalam tour package",
   "Hunza tour from Lahore",

@@ -1,5 +1,5 @@
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import { WHATSAPP_URL } from "@/lib/seo";
+import { WHATSAPP_URL, SITE_NAME } from "@/lib/seo";
 
 export function WhatsAppFloat() {
   return (
@@ -7,7 +7,7 @@ export function WhatsAppFloat() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Message Perdesi Tours on WhatsApp"
+      aria-label={`Message ${SITE_NAME} on WhatsApp`}
       className="group fixed bottom-6 right-6 z-50"
     >
       <span className="pointer-events-none absolute right-[4.5rem] top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full border border-border/70 bg-card px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground shadow-lg opacity-0 transition-all duration-300 group-hover:opacity-100 md:block">

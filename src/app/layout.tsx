@@ -62,6 +62,10 @@ export const metadata: Metadata = {
   verification: {
     google: "4HmOq-wR9LlKdhXLH2K0qYoyxADYRD9AQx_fL6Kk3m8",
   },
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/favicon.png", type: "image/png" }],
+  },
   other: {
     "geo.region": "PK-PB",
     "geo.placename": "Sheikhupura",

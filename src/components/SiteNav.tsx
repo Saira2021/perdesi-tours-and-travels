@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { TOURS_INDEX_PATH } from "@/lib/site";
 import { WHATSAPP_URL } from "@/lib/seo";
+import { SiteLogo } from "@/components/SiteLogo";
 
 const links = [
   { label: "Destinations", href: TOURS_INDEX_PATH },
@@ -20,9 +21,7 @@ export function SiteNav({ active }: { active?: string }) {
   return (
     <nav className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/60">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 md:flex md:justify-between">
-        <Link href="/" className="truncate font-display text-2xl italic font-bold text-sage tracking-tight">
-          Perdesi Tours
-        </Link>
+        <SiteLogo variant="nav" />
 
         <div className="hidden md:flex space-x-10 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80">
           {links.map((l) => (

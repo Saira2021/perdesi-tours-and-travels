@@ -7,11 +7,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { OfficeMap } from "@/components/OfficeMap";
 import founder from "@/assets/founder.png";
 import heroKalam from "@/assets/hero-kalam.png";
-import { absoluteUrl, breadcrumbJsonLd, pageMetadata, travelAgencyJsonLd, WHATSAPP_URL } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, pageMetadata, SITE_NAME, travelAgencyJsonLd, WHATSAPP_URL } from "@/lib/seo";
 
-const title = "About Perdesi Tours — Founded by Maryam Arif";
+const title = `About ${SITE_NAME} — Founded by Maryam Arif`;
 const description =
-  "Perdesi Tours is a woman-led travel agency founded in 2019 by Maryam Arif, continuing her father Arif Ali Pardesi's legacy of safe trips to Hunza, Skardu, Swat and Kashmir.";
+  `${SITE_NAME} is a woman-led travel agency founded in 2019 by Maryam Arif, continuing her father Arif Ali Pardesi's legacy of safe trips to Hunza, Skardu, Swat and Kashmir.`;
 
 export const metadata: Metadata = pageMetadata({
   title,
