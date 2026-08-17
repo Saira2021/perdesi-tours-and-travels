@@ -79,7 +79,7 @@ export default function HomePage() {
                 <span className="italic font-light">Northern Peaks</span>
               </h1>
               <p className="text-lg text-foreground/70 mt-8 mb-10 max-w-md leading-relaxed">
-                Curated, safe and soulful journeys through Kalam, Hunza, Skardu and beyond — designed
+                Curated, safe and soulful journeys through Kalam, Hunza, Skardu and beyond designed
                 with a woman&apos;s eye for hospitality, detail and trust.
               </p>
               <div className="flex items-center flex-wrap gap-x-6 gap-y-4">
@@ -105,7 +105,7 @@ export default function HomePage() {
               />
               <div className="absolute -bottom-8 -left-4 md:-left-10 bg-card p-6 md:p-8 rounded-xl shadow-2xl max-w-xs border border-border/50">
                 <p className="text-base md:text-lg italic font-display text-sage leading-snug mb-3">
-                  &quot;I want to show you the side of Pakistan that feels like home — no matter how far
+                  &quot;I want to show you the side of Pakistan that feels like home no matter how far
                   you travel.&quot;
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-foreground/70">
