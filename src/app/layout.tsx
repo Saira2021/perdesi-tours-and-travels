@@ -62,6 +62,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "4HmOq-wR9LlKdhXLH2K0qYoyxADYRD9AQx_fL6Kk3m8",
+    other: {
+      "ahrefs-site-verification": "eb2b79aa727c0347097a788e788b55a208baf01fc26dc66a4bd11f35fa7e9e99",
+    },
   },
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
