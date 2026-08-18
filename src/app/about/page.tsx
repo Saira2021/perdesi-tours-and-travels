@@ -7,7 +7,14 @@ import { JsonLd } from "@/components/JsonLd";
 import { OfficeMap } from "@/components/OfficeMap";
 import founder from "@/assets/founder.png";
 import heroKalam from "@/assets/hero-kalam.png";
-import { absoluteUrl, breadcrumbJsonLd, pageMetadata, SITE_NAME, travelAgencyJsonLd, WHATSAPP_URL } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  pageMetadata,
+  travelAgencyJsonLd,
+  websiteJsonLd,
+  WHATSAPP_URL,
+} from "@/lib/seo";
 
 const title = "About Us";
 const description =
@@ -64,6 +71,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background text-foreground">
       <JsonLd
         data={[
+          websiteJsonLd(),
           travelAgencyJsonLd(),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },

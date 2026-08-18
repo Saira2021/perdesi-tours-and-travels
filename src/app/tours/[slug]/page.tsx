@@ -56,6 +56,7 @@ export default async function TourPage({ params }: PageProps) {
   const { slug } = await params;
   const tour = getTour(slug);
   if (!tour) notFound();
+  const relatedTours = getRelatedTours(slug);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -190,7 +191,7 @@ export default async function TourPage({ params }: PageProps) {
         </section>
       )}
 
-      {getRelatedTours(slug).length > 0 && (
+      {relatedTours.length > 0 && (
         <section className="py-24 px-6 lg:px-8 bg-sage/[0.04] border-t border-border/60">
           <div className="max-w-7xl mx-auto">
             <span className="text-accent font-semibold tracking-[0.22em] uppercase text-[11px] mb-3 block">
@@ -198,7 +199,7 @@ export default async function TourPage({ params }: PageProps) {
             </span>
             <h2 className="text-4xl font-display mb-12">Related tours</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-              {getRelatedTours(slug).map((related) => (
+              {relatedTours.map((related) => (
                 <TourCard key={related.slug} tour={related} />
               ))}
             </div>

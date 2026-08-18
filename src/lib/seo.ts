@@ -146,7 +146,7 @@ export function travelAgencyJsonLd() {
     legalName: SITE_NAME,
     url: absoluteUrl("/"),
     image: assetUrl(heroImage.src),
-    logo: assetUrl(heroImage.src),
+    logo: absoluteUrl("/logo.png"),
     description: DEFAULT_DESCRIPTION,
     telephone: PHONE_E164,
     email: EMAIL,
