@@ -479,3 +479,13 @@ export const tours: Tour[] = [
 ];
 
 export const getTour = (slug: string) => tours.find((t) => t.slug === slug);
+
+export function getRelatedTours(slug: string, count = 3): Tour[] {
+  const index = tours.findIndex((t) => t.slug === slug);
+  if (index === -1) return tours.slice(0, count);
+  const related: Tour[] = [];
+  for (let i = 1; related.length < count && i < tours.length; i += 1) {
+    related.push(tours[(index + i) % tours.length]);
+  }
+  return related;
+}

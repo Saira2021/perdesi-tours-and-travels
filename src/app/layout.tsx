@@ -4,7 +4,14 @@ import Script from "next/script";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { DEFAULT_DESCRIPTION, KEYWORDS, SITE_NAME, SITE_ORIGIN, defaultOgImage } from "@/lib/seo";
+import {
+  DEFAULT_DESCRIPTION,
+  KEYWORDS,
+  SITE_NAME,
+  SITE_ORIGIN,
+  TITLE_BRAND,
+  defaultOgImage,
+} from "@/lib/seo";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -30,8 +37,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: `${SITE_NAME} | Pakistan Northern Areas Tours`,
-    template: `%s | ${SITE_NAME}`,
+    default: `${TITLE_BRAND} | Northern Pakistan Tours`,
+    template: `%s | ${TITLE_BRAND}`,
   },
   description: DEFAULT_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -50,13 +57,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_PK",
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Pakistan Northern Areas Tours`,
+    title: `${TITLE_BRAND} | Northern Pakistan Tours`,
     description: DEFAULT_DESCRIPTION,
     images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Pakistan Northern Areas Tours`,
+    title: `${TITLE_BRAND} | Northern Pakistan Tours`,
     description: DEFAULT_DESCRIPTION,
     images: [defaultOgImage.url],
   },

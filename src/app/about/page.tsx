@@ -9,9 +9,9 @@ import founder from "@/assets/founder.png";
 import heroKalam from "@/assets/hero-kalam.png";
 import { absoluteUrl, breadcrumbJsonLd, pageMetadata, SITE_NAME, travelAgencyJsonLd, WHATSAPP_URL } from "@/lib/seo";
 
-const title = `About ${SITE_NAME} — Founded by Maryam Arif`;
+const title = "About Us";
 const description =
-  `${SITE_NAME} is a woman-led travel agency founded in 2019 by Maryam Arif, continuing her father Arif Ali Pardesi's legacy of safe trips to Hunza, Skardu, Swat and Kashmir.`;
+  "Woman-led travel agency in Sheikhupura, founded by Maryam Arif. Safe Hunza, Skardu, Swat and Kashmir tours.";
 
 export const metadata: Metadata = pageMetadata({
   title,

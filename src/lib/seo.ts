@@ -20,8 +20,9 @@ export function whatsappUrl(context?: string) {
 
 export const WHATSAPP_URL = whatsappUrl();
 export const MAPS_URL = "https://share.google/d8slExiAI51WJCtTW";
+export const TITLE_BRAND = "Perdesi Tours";
 export const DEFAULT_DESCRIPTION =
-  "Woman-led tours of Pakistan's Northern Areas — Kalam, Hunza, Skardu, Naran and Fairy Meadows. Safe family, honeymoon and solo-women trips by CEO Maryam Arif.";
+  "Woman-led tours of Pakistan's Northern Areas — Kalam, Hunza, Skardu and Naran. Family, honeymoon and solo-women trips by Maryam Arif.";
 
 export const ADDRESS = {
   streetAddress: "Sheikhupura Stadium, Khalid Road, Gol Masjid, near Dar-ul-Shifa Hospital",
@@ -71,6 +72,22 @@ export const defaultOgImage = ogImage(
   "Northern Pakistan landscapes featured by Perdesi Tours",
 );
 
+const META_DESCRIPTION_LIMIT = 155;
+
+export function clampMetaDescription(text: string, max = META_DESCRIPTION_LIMIT): string {
+  const compact = text.replace(/\s+/g, " ").trim();
+  if (compact.length <= max) return compact;
+  const sliced = compact.slice(0, max - 1);
+  const lastSpace = sliced.lastIndexOf(" ");
+  return `${(lastSpace > 90 ? sliced.slice(0, lastSpace) : sliced).replace(/[ ,;:—-]+$/, "")}.`;
+}
+
+export function tourMetaDescription(tour: Tour): string {
+  return clampMetaDescription(
+    `${tour.name} from Lahore and Islamabad. ${tour.days}. Transport, hotel, breakfast and dinner included.`,
+  );
+}
+
 export function pageMetadata({
   title,
   description,
@@ -94,9 +111,10 @@ export function pageMetadata({
 }): Metadata {
   const url = absoluteUrl(path);
   const images = [ogImage(image, imageAlt)];
+  const metaDescription = clampMetaDescription(description);
   return {
     title: absoluteTitle ? { absolute: title } : title,
-    description,
+    description: metaDescription,
     keywords: keywords ?? KEYWORDS,
     alternates: { canonical: url },
     robots: noIndex
@@ -107,14 +125,14 @@ export function pageMetadata({
       locale: "en_PK",
       siteName: SITE_NAME,
       title,
-      description,
+      description: metaDescription,
       url,
       images,
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: metaDescription,
       images: [images[0].url],
     },
   };
@@ -215,24 +233,33 @@ export function tourJsonLd(tour: Tour, slug: string) {
   const url = absoluteUrl(`/tours/${slug}`);
   return {
     "@type": "TouristTrip",
+    "@id": `${url}#trip`,
     name: `${tour.name} Tour Package`,
     description: tour.summary,
     url,
     image: assetUrl(tour.img.src),
-    touristType: tour.audience.split(" • "),
-    itinerary: tour.itinerary?.map((day, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: `${day.day}: ${day.title}`,
-      description: day.text,
+    touristType: tour.audience.split(" • ").map((type) => ({
+      "@type": "Audience",
+      audienceType: type.trim(),
     })),
-    provider: { "@id": `${absoluteUrl("/")}#agency` },
-    offers: {
-      "@type": "Offer",
-      url,
-      availability: "https://schema.org/InStock",
-      priceCurrency: "PKR",
-      description: `${tour.days}. Transport, hotel, breakfast and dinner, bonfire and a professional guide included.`,
+    itinerary: tour.itinerary?.length
+      ? {
+          "@type": "ItemList",
+          name: `${tour.name} itinerary`,
+          numberOfItems: tour.itinerary.length,
+          itemListElement: tour.itinerary.map((day, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: `${day.day}: ${day.title}`,
+            description: day.text,
+          })),
+        }
+      : undefined,
+    provider: {
+      "@type": "TravelAgency",
+      "@id": `${absoluteUrl("/")}#agency`,
+      name: SITE_NAME,
+      url: absoluteUrl("/"),
     },
   };
 }

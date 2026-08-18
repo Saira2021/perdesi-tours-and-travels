@@ -6,11 +6,17 @@ import { SiteLogo } from "@/components/SiteLogo";
 
 const destinations = [
   { href: TOURS_INDEX_PATH, label: "All destinations" },
-  { href: "/tours/swat-kalam-3-days", label: "Kalam & Swat Valley" },
-  { href: "/tours/hunza-skardu-8-days", label: "Hunza & Gilgit" },
-  { href: "/tours/skardu-wilderness", label: "Skardu & Shigar" },
+  { href: "/tours/hunza-valley-5-days", label: "Hunza Valley" },
+  { href: "/tours/skardu-valley-6-days", label: "Skardu Valley" },
+  { href: "/tours/hunza-skardu-8-days", label: "Hunza & Skardu" },
+  { href: "/tours/swat-kalam-3-days", label: "Kalam & Swat" },
   { href: "/tours/naran-kaghan-3-days", label: "Naran–Kaghan" },
+  { href: "/tours/kashmir-valley-3-days", label: "Kashmir Valley" },
   { href: "/tours/fairy-meadows-5-days", label: "Fairy Meadows" },
+  { href: "/tours/kumrat-valley-3-days", label: "Kumrat Valley" },
+  { href: "/tours/murree-3-days", label: "Murree & Galiyat" },
+  { href: "/tours/shogran-valley-2-days", label: "Shogran" },
+  { href: "/tours/musa-ka-musala-summit", label: "Musa Ka Musala" },
 ] as const;
 
 const socials = [
@@ -80,6 +86,11 @@ export function SiteFooter() {
         <div>
           <h4 className="text-xs uppercase tracking-[0.22em] font-bold mb-5 text-accent">Connect</h4>
           <ul className="space-y-3 text-sm text-cream/80">
+            <li>
+              <Link href="/about" className="hover:text-accent transition-colors">
+                About us
+              </Link>
+            </li>
             <li>
               <a href={WHATSAPP_URL} className="hover:text-accent transition-colors">
                 WhatsApp: +92 336 4572568

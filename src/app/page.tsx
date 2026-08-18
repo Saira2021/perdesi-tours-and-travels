@@ -15,6 +15,7 @@ import { TOURS_INDEX_PATH } from "@/lib/site";
 import {
   EMAIL,
   SITE_NAME,
+  TITLE_BRAND,
   WHATSAPP_URL,
   absoluteUrl,
   HOME_FAQS,
@@ -26,9 +27,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: `${SITE_NAME} | Pakistan Northern Areas Tours — Kalam, Hunza & Skardu`,
+  title: `${TITLE_BRAND} | Northern Pakistan Tours`,
   description:
-    "Book curated tours of Pakistan's Northern Areas — Kalam, Hunza, Skardu, Naran and Fairy Meadows. Woman-led agency by CEO Maryam Arif. Family, honeymoon and solo women trips.",
+    "Book Kalam, Hunza, Skardu and Naran tours. Woman-led trips by Maryam Arif from Lahore and Islamabad.",
   path: "/",
   image: heroImage,
   imageAlt: "Collage of Pakistan's northern mountains, valleys and landmarks with Perdesi Tours",
@@ -59,7 +60,7 @@ export default function HomePage() {
               "@type": "ListItem",
               position: i + 1,
               name: t.name,
-              url: absoluteUrl(`/tours/${t.slug}`),
+              item: absoluteUrl(`/tours/${t.slug}`),
             })),
           },
           faqJsonLd(HOME_FAQS),
@@ -109,7 +110,7 @@ export default function HomePage() {
                   you travel.&quot;
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-foreground/70">
-                  — Maryam Arif, Founder & CEO
+                   Maryam Arif, Founder & CEO
                 </p>
               </div>
             </div>

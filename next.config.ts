@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         destination: "/book-northern-pakistan-tours",
         permanent: true,
       },
+      {
+        source: "/tours/",
+        destination: "/book-northern-pakistan-tours",
+        permanent: true,
+      },
     ];
   },
 };

@@ -9,12 +9,15 @@ import {
   breadcrumbJsonLd,
   pageMetadata,
   tourJsonLd,
+  tourMetaDescription,
   travelAgencyJsonLd,
   whatsappUrl,
 } from "@/lib/seo";
 import { TOURS_INDEX_PATH } from "@/lib/site";
+import { TourCard } from "@/components/TourCard";
 import {
   getTour,
+  getRelatedTours,
   tours,
   includedServices,
   excludedServices,
@@ -39,10 +42,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       noIndex: true,
     });
   }
-  const description = `${t.summary} ${t.days}. Includes transport, hotel, breakfast and dinner, bonfire and a professional guide.`;
   return pageMetadata({
-    title: `${t.name} Tour Package`,
-    description,
+    title: t.name,
+    description: tourMetaDescription(t),
     path: `/tours/${slug}`,
     image: t.img,
     imageAlt: `${t.name} in ${t.region} — Perdesi Tours Pakistan`,
@@ -184,6 +186,22 @@ export default async function TourPage({ params }: PageProps) {
                 {tour.note}
               </p>
             ) : null}
+          </div>
+        </section>
+      )}
+
+      {getRelatedTours(slug).length > 0 && (
+        <section className="py-24 px-6 lg:px-8 bg-sage/[0.04] border-t border-border/60">
+          <div className="max-w-7xl mx-auto">
+            <span className="text-accent font-semibold tracking-[0.22em] uppercase text-[11px] mb-3 block">
+              Keep exploring
+            </span>
+            <h2 className="text-4xl font-display mb-12">Related tours</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
+              {getRelatedTours(slug).map((related) => (
+                <TourCard key={related.slug} tour={related} />
+              ))}
+            </div>
           </div>
         </section>
       )}

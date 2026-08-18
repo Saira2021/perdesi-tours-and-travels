@@ -10,12 +10,13 @@ import {
   breadcrumbJsonLd,
   pageMetadata,
   travelAgencyJsonLd,
+  websiteJsonLd,
 } from "@/lib/seo";
 import heroImage from "@/assets/hero-kalam.png";
 
-const title = "Book Northern Pakistan Tours — Hunza, Skardu, Kalam & More";
+const title = "Northern Pakistan Tours";
 const description =
-  "Book northern Pakistan tour packages with Perdesi Tours. Hunza, Skardu, Kalam, Naran, Fairy Meadows, Kashmir and Murree trips from Lahore and Islamabad. Woman-led, family and solo-women groups.";
+  "Northern Pakistan tour packages from Lahore and Islamabad — Hunza, Skardu, Kalam, Naran, Kashmir and Murree.";
 
 export const metadata: Metadata = pageMetadata({
   title,
@@ -41,6 +42,7 @@ export default function ToursIndexPage() {
     <div className="min-h-screen bg-background text-foreground">
       <JsonLd
         data={[
+          websiteJsonLd(),
           travelAgencyJsonLd(),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
@@ -61,7 +63,7 @@ export default function ToursIndexPage() {
                 "@type": "ListItem",
                 position: i + 1,
                 name: t.name,
-                url: absoluteUrl(`/tours/${t.slug}`),
+                item: absoluteUrl(`/tours/${t.slug}`),
               })),
             },
           },
