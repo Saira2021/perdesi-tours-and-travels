@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -76,6 +77,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-PK" className={`${playfair.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="VloE+CIB8rqISH+cgiPSvw"
+          strategy="afterInteractive"
+        />
         <GoogleAnalytics />
         {children}
         <WhatsAppFloat />
