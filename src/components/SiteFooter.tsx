@@ -17,6 +17,8 @@ const destinations = [
   { href: "/tours/murree-3-days", label: "Murree & Galiyat" },
   { href: "/tours/shogran-valley-2-days", label: "Shogran" },
   { href: "/tours/musa-ka-musala-summit", label: "Musa Ka Musala" },
+  { href: "/tours/mahodand-alpine-lakes", label: "Mahodand Lakes" },
+  { href: "/tours/islamabad-city-tour", label: "Islamabad City Tour" },
 ] as const;
 
 const socials = [
